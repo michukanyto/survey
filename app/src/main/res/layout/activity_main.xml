@@ -7,12 +7,246 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textViewtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="116dp"
+        android:text="Drinks Survey"
+        android:textColor="#27ae60"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewUserId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="37dp"
+        android:text="Client Number"
+        android:textColor="#f39c12"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editTextUserId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewtitle" />
+
+    <TextView
+        android:id="@+id/textViewDrinkType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="38dp"
+        android:text="Drink Type"
+        android:textColor="#f39c12"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerDrinkType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserId" />
+
+    <TextView
+        android:id="@+id/textViewDrink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="205dp"
+        android:text="Drink"
+        android:textColor="#f39c12"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDrinkType" />
+
+    <TextView
+        android:id="@+id/textViewNumberCups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="61dp"
+        android:text="# Cups"
+        android:textColor="#f39c12"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumberCups"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupButtonLimonade" />
+
+    <EditText
+        android:id="@+id/editTextUserId"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="71dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewtitle" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupButtonJuice"
+        android:layout_width="265dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="74dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDrink">
+
+        <RadioButton
+            android:id="@+id/radioButtonApple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Apple"
+            android:textColor="#27ae60"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOrange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Orange"
+            android:textColor="#27ae60"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMixed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mixed"
+            android:textColor="#27ae60"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroupButtonLimonade"
+        android:layout_width="263dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="74dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupButtonJuice">
+
+        <RadioButton
+            android:id="@+id/radioButtonCoca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Coca"
+            android:textColor="#27ae60"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSprite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sprite"
+            android:textColor="#27ae60"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSevenUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Seven UP"
+            android:textColor="#27ae60"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editTextNumberCups"
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="76dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupButtonLimonade" />
+
+    <Spinner
+        android:id="@+id/spinnerDrinkType"
+        android:layout_width="186dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUserId" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="77dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="141dp"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonNew"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNumberCups"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="#f39c12"/>
+
+    <Button
+        android:id="@+id/buttonNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="140dp"
+        android:text="New"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonResults"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberCups"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="#f39c12"/>
+
+    <Button
+        android:id="@+id/buttonResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="140dp"
+        android:text="Results"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberCups"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="#27ae60"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="92dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="56dp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewtitle"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/beverage" />
 
 </android.support.constraint.ConstraintLayout>
