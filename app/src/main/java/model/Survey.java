@@ -7,12 +7,12 @@ public class Survey {
 //        LIMONADE;
 //    }
 
-    private int clientNumber;
+    private String clientNumber;
     private String drinkType;
     private String drink;
     private int numCups;
 
-    public Survey(int clientNumber, String drinkType, String drink, int numCups) {
+    public Survey(String clientNumber, String drinkType, String drink, int numCups) {
         this.clientNumber = clientNumber;
         this.drinkType = drinkType;
         this.drink = drink;
@@ -20,11 +20,11 @@ public class Survey {
     }
 
 
-    public int getClientNumber() {
+    public String getClientNumber() {
         return clientNumber;
     }
 
-    public void setClientNumber(int clientNumber) {
+    public void setClientNumber(String clientNumber) {
         this.clientNumber = clientNumber;
     }
 

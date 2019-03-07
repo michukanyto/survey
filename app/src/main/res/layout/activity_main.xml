@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#ffffff">
 
     <TextView
         android:id="@+id/textViewtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="52dp"
         android:text="Drinks Survey"
         android:textColor="#27ae60"
-        android:textSize="24sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -58,7 +59,7 @@
         android:layout_marginEnd="205dp"
         android:text="Drink"
         android:textColor="#f39c12"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +88,8 @@
         android:layout_marginEnd="71dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColorHint="#27ae60"
+        android:textColorLink="#27ae60"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewtitle" />
 
@@ -109,6 +112,7 @@
             android:layout_weight="1"
             android:text="Apple"
             android:textColor="#27ae60"
+            android:textColorLink="#f39c12"
             android:textStyle="bold" />
 
         <RadioButton
@@ -118,6 +122,7 @@
             android:layout_weight="1"
             android:text="Orange"
             android:textColor="#27ae60"
+            android:textColorLink="#f39c12"
             android:textStyle="bold" />
 
         <RadioButton
@@ -127,6 +132,7 @@
             android:layout_weight="1"
             android:text="Mixed"
             android:textColor="#27ae60"
+            android:textColorLink="#f39c12"
             android:textStyle="bold" />
     </RadioGroup>
 
@@ -150,6 +156,7 @@
             android:layout_weight="1"
             android:text="Coca"
             android:textColor="#27ae60"
+            android:textColorLink="#f39c12"
             android:textStyle="bold" />
 
         <RadioButton
@@ -159,6 +166,7 @@
             android:layout_weight="1"
             android:text="Sprite"
             android:textColor="#27ae60"
+            android:textColorLink="#f39c12"
             android:textStyle="bold" />
 
         <RadioButton
@@ -168,6 +176,7 @@
             android:layout_weight="1"
             android:text="Seven UP"
             android:textColor="#27ae60"
+            android:textColorLink="#f39c12"
             android:textStyle="bold" />
     </RadioGroup>
 
@@ -178,7 +187,8 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="76dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
+        android:textColorLink="#27ae60"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroupButtonLimonade" />
 
@@ -199,28 +209,31 @@
         android:layout_marginTop="77dp"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="141dp"
+        android:background="#f39c12"
         android:text="Add"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonNew"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNumberCups"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="#f39c12"/>
+        app:layout_constraintVertical_bias="0.311" />
 
     <Button
         android:id="@+id/buttonNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="69dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="44dp"
         android:layout_marginBottom="140dp"
+        android:background="#f39c12"
         android:text="New"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonResults"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberCups"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="#f39c12"/>
+        app:layout_constraintVertical_bias="0.333" />
 
     <Button
         android:id="@+id/buttonResults"
@@ -229,22 +242,23 @@
         android:layout_marginTop="69dp"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="140dp"
+        android:background="#27ae60"
         android:text="Results"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberCups"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="#27ae60"/>
+        app:layout_constraintVertical_bias="0.333" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="92dp"
-        android:layout_height="76dp"
+        android:layout_width="133dp"
+        android:layout_height="99dp"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="56dp"
         app:layout_constraintEnd_toStartOf="@+id/textViewtitle"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/beverage" />
