@@ -17,12 +17,14 @@ import java.util.ArrayList;
 
 import model.Survey;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener {
 
     public enum Drink{
         JUICE,
         LEMONADE;
     }
+
+    public static final String KEY = "ok";
 
 
     EditText editTextUserId;
@@ -59,14 +61,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonNew.setOnClickListener(this);
         buttonResults.setOnClickListener(this);
         spinnerDrinkType = (Spinner) findViewById(R.id.spinnerDrinkType);
+        spinnerDrinkType.setOnItemSelectedListener(this);
         drinkTypes = new ArrayList<>();
         populateSpinner();
         adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,drinkTypes);
         spinnerDrinkType.setAdapter(adapter);
         surveys = new ArrayList<>();
         intent = new Intent(this,ResultActivity.class);
-        groupButtonVisibility();
+//        groupButtonVisibility();
     }
+
 
 
     public void populateSpinner(){
@@ -80,12 +84,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.buttonAdd:
                 saveSurvey();
-//                radioGroupButtonJuice.setVisibility(View.VISIBLE);
                 break;
             case R.id.buttonNew:
                 newSurvey();
                 break;
             case R.id.buttonResults:
+                intent.putExtra(KEY,surveys);
                 startActivity(intent);
                 break;
             default:
@@ -97,12 +101,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (parent.getItemAtPosition(position).toString().equals(Drink.LEMONADE.toString())){
+            radioGroupButtonJuice.setVisibility(View.INVISIBLE);
+            radioGroupButtonLemonade.setVisibility(View.VISIBLE);
+            Log.i("I'm hiding","     Juice");
+        }else if (parent.getItemAtPosition(position).toString().equals(Drink.JUICE.toString())){
+            radioGroupButtonLemonade.setVisibility(View.INVISIBLE);
+            radioGroupButtonJuice.setVisibility(View.VISIBLE);
+            Log.i("I'm hiding","     Lemonade");
+        }
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+
     public void saveSurvey() {
         if (spinnerDrinkType.getSelectedItem().toString().equals(Drink.LEMONADE.toString())){
-//            radioGroupButtonJuice.setVisibility(View.INVISIBLE);
             radioButton = (RadioButton) findViewById(radioGroupButtonLemonade.getCheckedRadioButtonId());
         }else if (spinnerDrinkType.getSelectedItem().toString().equals(Drink.JUICE.toString())){
-//            radioGroupButtonLemonade.setVisibility(View.INVISIBLE);
             radioButton = (RadioButton) findViewById(radioGroupButtonJuice.getCheckedRadioButtonId());
         }
         drink = radioButton.getText().toString();
@@ -112,32 +134,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void groupButtonVisibility(){
 
-        spinnerDrinkType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if (parent.getItemAtPosition(position).toString().equals(Drink.LEMONADE.toString())){
-                    radioGroupButtonJuice.setVisibility(View.INVISIBLE);
-                    radioGroupButtonLemonade.setVisibility(View.VISIBLE);
-                    Log.i("I'm hiding","     Juice");
-                }else if (parent.getItemAtPosition(position).toString().equals(Drink.JUICE.toString())){
-                    radioGroupButtonLemonade.setVisibility(View.INVISIBLE);
-                    radioGroupButtonJuice.setVisibility(View.VISIBLE);
-                    Log.i("I'm hiding","     Lemonade");
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-    }
-
+//    public void groupButtonVisibility(){
+//
+//        spinnerDrinkType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//
+//                if (parent.getItemAtPosition(position).toString().equals(Drink.LEMONADE.toString())){
+//                    radioGroupButtonJuice.setVisibility(View.INVISIBLE);
+//                    radioGroupButtonLemonade.setVisibility(View.VISIBLE);
+//                    Log.i("I'm hiding","     Juice");
+//                }else if (parent.getItemAtPosition(position).toString().equals(Drink.JUICE.toString())){
+//                    radioGroupButtonLemonade.setVisibility(View.INVISIBLE);
+//                    radioGroupButtonJuice.setVisibility(View.VISIBLE);
+//                    Log.i("I'm hiding","     Lemonade");
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+//
+//    }
 
 
     private void newSurvey() {

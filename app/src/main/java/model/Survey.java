@@ -1,11 +1,9 @@
 package model;
 
-public class Survey {
+import java.io.Serializable;
 
-//    public enum Drink{
-//        JUICE,
-//        LIMONADE;
-//    }
+public class Survey implements Serializable {
+
 
     private String clientNumber;
     private String drinkType;
