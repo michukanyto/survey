@@ -2,6 +2,7 @@ package model;
 
 import com.appsmontreal.survey.MainActivity;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Calculation {
@@ -27,6 +28,7 @@ public class Calculation {
     public static double percentageSprite;
     public static int totalSevenUP;
     public static double percentageSevenUP;
+    DecimalFormat df = new DecimalFormat("#.0");
 
 //    public Calculation(ArrayList<Survey> data) {
 //        this.data = data;
@@ -114,36 +116,13 @@ public class Calculation {
     }
 
     public void calculate(){
-//        for (Survey i : data){
-//            switch (i.getDrink()){
-//                case MainActivity.APPLE:
-//                    totalApple += i.getNumCups();
-//                    break;
-//                case MainActivity.ORANGE:
-//                    totalOrange += i.getNumCups();
-//                    break;
-//                case MainActivity.MIXED:
-//                    totalMixed += i.getNumCups();
-//                    break;
-//                case MainActivity.COCA:
-//                    totalCoca += i.getNumCups();
-//                    break;
-//                case MainActivity.SPRITE:
-//                    totalSprite += i.getNumCups();
-//                    break;
-//                case MainActivity.SEVENUP:
-//                    totalSevenUP += i.getNumCups();
-//                    break;
-//                default:
-//                    break;
-//
-//            }
-            percentageApple = ((double)totalApple /(double) totalCups) * (double)100;
-            percentageOrange = ((double)totalOrange / (double)totalCups) * (double) 100;
-            percentageMixed = ((double)totalMixed / (double)totalCups) * (double)100;
-            percentageCoca = ((double)totalCoca / (double)totalCups) * (double)100;
-            percentageSprite = ((double)totalSprite / (double)totalCups) * (double)100;
-            percentageSevenUP = ((double)totalSevenUP / (double)totalCups) * (double)100;
+
+            percentageApple = ((double) totalApple /(double) totalCups) * (double) 100;
+            percentageOrange = ((double) totalOrange / (double) totalCups) * (double) 100;
+            percentageMixed = ((double) totalMixed / (double) totalCups) * (double) 100;
+            percentageCoca = ((double) totalCoca / (double) totalCups) * (double) 100;
+            percentageSprite = ((double) totalSprite / (double) totalCups) * (double) 100;
+            percentageSevenUP = ((double) totalSevenUP / (double) totalCups) * (double) 100;
         }
 
     }
