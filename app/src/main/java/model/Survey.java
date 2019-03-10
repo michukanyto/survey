@@ -8,13 +8,13 @@ public class Survey implements Serializable {
     private String clientNumber;
     private String drinkType;
     private String drink;
-    private int numCups;
+    private static int numCups;
 
     public Survey(String clientNumber, String drinkType, String drink, int numCups) {
         this.clientNumber = clientNumber;
         this.drinkType = drinkType;
         this.drink = drink;
-        this.numCups = numCups;
+        this.numCups += numCups;
     }
 
 

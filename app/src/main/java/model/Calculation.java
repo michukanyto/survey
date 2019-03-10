@@ -1,36 +1,36 @@
 package model;
 
+import com.appsmontreal.survey.MainActivity;
+
 import java.util.ArrayList;
 
 public class Calculation {
-    public enum Drink{
-        Apple,
-        Orange,
-        Mixed,
-        Coca,
-        Sprite,
-        SevenUp,
-        APPLE;
-    }
+//    private final String APPLE = "Apple";
+//    private final String ORANGE = "Orange";
+//    private final String MIXED = "Mixed";
+//    private final String COCA = "Coca";
+//    private final String SPRITE = "Sprite";
+//    private final String SEVENUP = "SevenUp";
+
 
     ArrayList<Survey> data;
-    private int totalCups;
-    private int totalApple;
-    private int percentageApple;
-    private int totalOrange;
-    private int percentageOrange;
-    private int totalMixed;
-    private int percentageMixed;
-    private int totalCoca;
-    private int percentageCoca;
-    private int totalSprite;
-    private int percentageSprite;
-    private int totalSevenUP;
-    private int percentageSevenUP;
+    public static int totalCups;
+    public static int totalApple;
+    public static double percentageApple;
+    public static int totalOrange;
+    public static double percentageOrange;
+    public static int totalMixed;
+    public static double percentageMixed;
+    public static int totalCoca;
+    public static double percentageCoca;
+    public static int totalSprite;
+    public static double percentageSprite;
+    public static int totalSevenUP;
+    public static double percentageSevenUP;
 
-    public Calculation(ArrayList<Survey> data) {
-        this.data = data;
-    }
+//    public Calculation(ArrayList<Survey> data) {
+//        this.data = data;
+//    }
 
     public int getTotalCups() {
         return totalCups;
@@ -40,7 +40,7 @@ public class Calculation {
         return totalApple;
     }
 
-    public int getPercentageApple() {
+    public double getPercentageApple() {
         return percentageApple;
     }
 
@@ -48,7 +48,7 @@ public class Calculation {
         return totalOrange;
     }
 
-    public int getPercentageOrange() {
+    public double getPercentageOrange() {
         return percentageOrange;
     }
 
@@ -56,7 +56,7 @@ public class Calculation {
         return totalMixed;
     }
 
-    public int getPercentageMixed() {
+    public double getPercentageMixed() {
         return percentageMixed;
     }
 
@@ -64,7 +64,7 @@ public class Calculation {
         return totalCoca;
     }
 
-    public int getPercentageCoca() {
+    public double getPercentageCoca() {
         return percentageCoca;
     }
 
@@ -72,7 +72,7 @@ public class Calculation {
         return totalSprite;
     }
 
-    public int getPercentageSprite() {
+    public double getPercentageSprite() {
         return percentageSprite;
     }
 
@@ -80,43 +80,71 @@ public class Calculation {
         return totalSevenUP;
     }
 
-    public int getPercentageSevenUP() {
+    public double getPercentageSevenUP() {
         return percentageSevenUP;
     }
 
 
-    public void calculate(){
-        for (Survey i : data){
-            switch (i.getDrink()){
-                case "Apple":
-                    totalApple += i.getNumCups();
-                    break;
-                case "Orange":
-                    totalOrange += i.getNumCups();
-                    break;
-                case "Mixed":
-                    totalMixed += i.getNumCups();
-                    break;
-                case "Coca":
-                    totalCoca += i.getNumCups();
-                    break;
-                case "Sprite":
-                    totalSprite += i.getNumCups();
-                    break;
-                case "SevenUp":
-                    totalSevenUP += i.getNumCups();
-                    break;
-                default:
-                    break;
+    public void setTotalCups(int totalCups) {
+        this.totalCups += totalCups;
+    }
 
-            }
-            percentageApple = (totalApple / totalCups) * 100;
-            percentageOrange = (totalOrange / totalCups) * 100;
-            percentageMixed = (totalMixed / totalCups) * 100;
-            percentageCoca = (totalCoca / totalCups) * 100;
-            percentageSprite = (totalSprite / totalCups) * 100;
-            percentageSevenUP = (totalSevenUP / totalCups) * 100;
+    public void setTotalApple(int totalApple) {
+        this.totalApple = totalApple;
+    }
+
+    public void setTotalOrange(int totalOrange) {
+        this.totalOrange = totalOrange;
+    }
+
+    public void setTotalMixed(int totalMixed) {
+        this.totalMixed = totalMixed;
+    }
+
+    public void setTotalCoca(int totalCoca) {
+        this.totalCoca = totalCoca;
+    }
+
+    public void setTotalSprite(int totalSprite) {
+        this.totalSprite = totalSprite;
+    }
+
+    public void setTotalSevenUP(int totalSevenUP) {
+        this.totalSevenUP = totalSevenUP;
+    }
+
+    public void calculate(){
+//        for (Survey i : data){
+//            switch (i.getDrink()){
+//                case MainActivity.APPLE:
+//                    totalApple += i.getNumCups();
+//                    break;
+//                case MainActivity.ORANGE:
+//                    totalOrange += i.getNumCups();
+//                    break;
+//                case MainActivity.MIXED:
+//                    totalMixed += i.getNumCups();
+//                    break;
+//                case MainActivity.COCA:
+//                    totalCoca += i.getNumCups();
+//                    break;
+//                case MainActivity.SPRITE:
+//                    totalSprite += i.getNumCups();
+//                    break;
+//                case MainActivity.SEVENUP:
+//                    totalSevenUP += i.getNumCups();
+//                    break;
+//                default:
+//                    break;
+//
+//            }
+            percentageApple = ((double)totalApple /(double) totalCups) * (double)100;
+            percentageOrange = ((double)totalOrange / (double)totalCups) * (double) 100;
+            percentageMixed = ((double)totalMixed / (double)totalCups) * (double)100;
+            percentageCoca = ((double)totalCoca / (double)totalCups) * (double)100;
+            percentageSprite = ((double)totalSprite / (double)totalCups) * (double)100;
+            percentageSevenUP = ((double)totalSevenUP / (double)totalCups) * (double)100;
         }
 
     }
-}
+

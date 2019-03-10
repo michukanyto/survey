@@ -13,8 +13,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
+import java.nio.DoubleBuffer;
 import java.util.ArrayList;
 
+import model.Calculation;
 import model.Survey;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener {
@@ -23,6 +25,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         JUICE,
         LEMONADE;
     }
+
+    public static final String APPLE = "Apple";
+    public static final String ORANGE = "Orange";
+    public static final String MIXED = "Mixed";
+    public static final String COCA = "Coca";
+    public static final String SPRITE = "Sprite";
+    public static final String SEVENUP = "SevenUp";
 
     public static final String KEY = "ok";
 
@@ -41,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String drink;
     RadioButton radioButton;
     Intent intent;
+    Calculation calculator;
+    int cups;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         spinnerDrinkType.setAdapter(adapter);
         surveys = new ArrayList<>();
         intent = new Intent(this,ResultActivity.class);
+        calculator = new Calculation();
 //        groupButtonVisibility();
     }
 
@@ -89,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 newSurvey();
                 break;
             case R.id.buttonResults:
-                intent.putExtra(KEY,surveys);
+//                intent.putExtra(KEY,surveys);
                 startActivity(intent);
                 break;
             default:
@@ -128,8 +140,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             radioButton = (RadioButton) findViewById(radioGroupButtonJuice.getCheckedRadioButtonId());
         }
         drink = radioButton.getText().toString();
+        cups = Integer.parseInt(editTextNumberCups.getText().toString());
+        calculator.setTotalCups(cups);
+        switch(drink){
+            case APPLE:
+                calculator.setTotalApple(cups);
+                break;
+            case ORANGE:
+                calculator.setTotalOrange(cups);
+                break;
+            case MIXED:
+                calculator.setTotalMixed(cups);
+                break;
+            case COCA:
+                calculator.setTotalCoca(cups);
+                break;
+            case SPRITE:
+                calculator.setTotalSprite(cups);
+                break;
+            case SEVENUP:
+                calculator.setTotalSevenUP(cups);
+                break;
+        }
 
-        surveys.add(new Survey(editTextUserId.getText().toString(),spinnerDrinkType.getSelectedItem().toString(), drink,Integer.parseInt(editTextNumberCups.getText().toString())));
+//
+//        surveys.add(new Survey(editTextUserId.getText().toString(),spinnerDrinkType.getSelectedItem().toString(), drink,Integer.parseInt(editTextNumberCups.getText().toString())));
         Log.i("info",editTextUserId.getText().toString() + spinnerDrinkType.getSelectedItem().toString()+ drink + Integer.parseInt(editTextNumberCups.getText().toString()));
     }
 
