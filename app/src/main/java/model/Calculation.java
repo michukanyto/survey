@@ -17,17 +17,17 @@ public class Calculation {
     ArrayList<Survey> data;
     public static int totalCups;
     public static int totalApple;
-    public static double percentageApple;
+    public static float percentageApple;
     public static int totalOrange;
-    public static double percentageOrange;
+    public static float percentageOrange;
     public static int totalMixed;
-    public static double percentageMixed;
+    public static float percentageMixed;
     public static int totalCoca;
-    public static double percentageCoca;
+    public static float percentageCoca;
     public static int totalSprite;
-    public static double percentageSprite;
+    public static float percentageSprite;
     public static int totalSevenUP;
-    public static double percentageSevenUP;
+    public static float percentageSevenUP;
     DecimalFormat df = new DecimalFormat("#.0");
 
 //    public Calculation(ArrayList<Survey> data) {
@@ -42,7 +42,7 @@ public class Calculation {
         return totalApple;
     }
 
-    public double getPercentageApple() {
+    public float getPercentageApple() {
         return percentageApple;
     }
 
@@ -50,7 +50,7 @@ public class Calculation {
         return totalOrange;
     }
 
-    public double getPercentageOrange() {
+    public float getPercentageOrange() {
         return percentageOrange;
     }
 
@@ -58,7 +58,7 @@ public class Calculation {
         return totalMixed;
     }
 
-    public double getPercentageMixed() {
+    public float getPercentageMixed() {
         return percentageMixed;
     }
 
@@ -66,7 +66,7 @@ public class Calculation {
         return totalCoca;
     }
 
-    public double getPercentageCoca() {
+    public float getPercentageCoca() {
         return percentageCoca;
     }
 
@@ -74,7 +74,7 @@ public class Calculation {
         return totalSprite;
     }
 
-    public double getPercentageSprite() {
+    public float getPercentageSprite() {
         return percentageSprite;
     }
 
@@ -82,7 +82,7 @@ public class Calculation {
         return totalSevenUP;
     }
 
-    public double getPercentageSevenUP() {
+    public float getPercentageSevenUP() {
         return percentageSevenUP;
     }
 
@@ -117,12 +117,12 @@ public class Calculation {
 
     public void calculate(){
 
-            percentageApple = ((double) totalApple /(double) totalCups) * (double) 100;
-            percentageOrange = ((double) totalOrange / (double) totalCups) * (double) 100;
-            percentageMixed = ((double) totalMixed / (double) totalCups) * (double) 100;
-            percentageCoca = ((double) totalCoca / (double) totalCups) * (double) 100;
-            percentageSprite = ((double) totalSprite / (double) totalCups) * (double) 100;
-            percentageSevenUP = ((double) totalSevenUP / (double) totalCups) * (double) 100;
+            percentageApple = ((float) totalApple /(float) totalCups) * (float) 100;
+            percentageOrange = ((float) totalOrange / (float) totalCups) * (float) 100;
+            percentageMixed = ((float) totalMixed / (float) totalCups) * (float) 100;
+            percentageCoca = ((float) totalCoca / (float) totalCups) * (float) 100;
+            percentageSprite = ((float) totalSprite / (float) totalCups) * (float) 100;
+            percentageSevenUP = ((float) totalSevenUP / (float) totalCups) * (float) 100;
         }
 
     }
